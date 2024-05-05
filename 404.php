@@ -6,7 +6,9 @@ CHTTP::SetStatus("404 Not Found");
 
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 
-$APPLICATION->SetTitle("404 Not Found");?>
+$APPLICATION->SetTitle("404 Not Found");
+$APPLICATION->SetPageProperty('TITLE', '404 Not Found');
+?>
 
 <!-- Контент (ошибка) -->
 <div class="error-area ptb-120">

@@ -91,8 +91,8 @@ use Bitrix\Main\Page\Asset;
     </div>
 <?php endif; ?>
 
-<!-- Шапка сайта (меню) -->
-<header id="sticky-header" class="header-area header-wrapper transparent-header">
+    <!-- Шапка сайта (меню) -->
+    <header id="sticky-header" class="header-area header-wrapper <?= ($APPLICATION->GetCurDir() === '/') ? 'transparent-header' : 'white-bg'; ?>">
 
     <!-- Меню (для десктопа) -->
     <div class="header-middle-area full-width">
@@ -110,38 +110,24 @@ use Bitrix\Main\Page\Asset;
 
                     <!-- Меню (основное) -->
                     <div class="col-md-10 col-sm-9 col-xs-4 text-right">
-                        <div class="header-main-menu hidden-xs">
-                            <nav id="primary-menu">
-                                <ul class="main-menu text-right">
-                                    <li class="mega-parent">
-                                        <a href="index.html">Главная</a>
-                                    </li>
-                                    <li>
-                                        <a href="about_us.html">О нас</a>
-                                    </li>
-                                    <li>
-                                        <a href="services.html">
-                                            Услуги
-                                            <span class="indicator"><i class="fa fa-angle-down"></i></span>
-                                        </a>
-                                        <ul class="dropdown">
-                                            <li>
-                                                <a href="services_landing.html">Лендинг</a>
-                                            </li>
-                                            <li>
-                                                <a href="services_online_shop.html">Интернет-магазин</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="portfolio.html">Портфолио</a>
-                                    </li>
-                                    <li>
-                                        <a href="contacts.html">Контакты</a>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
+                        <?$APPLICATION->IncludeComponent(
+                            "bitrix:menu",
+                            "top_menu",
+                            [
+                                "ALLOW_MULTI_SELECT" => "N",
+                                "CHILD_MENU_TYPE" => "subtop",
+                                "DELAY" => "N",
+                                "MAX_LEVEL" => "2",
+                                "MENU_CACHE_GET_VARS" => [],
+                                "MENU_CACHE_TIME" => "3600",
+                                "MENU_CACHE_TYPE" => "N",
+                                "MENU_CACHE_USE_GROUPS" => "N",
+                                "ROOT_MENU_TYPE" => "top",
+                                "USE_EXT" => "N",
+                                "COMPONENT_TEMPLATE" => "top_menu"
+                            ],
+                            false
+                        );?>
 
                         <!-- Поиск -->
                         <div class="header-right">
@@ -172,47 +158,24 @@ use Bitrix\Main\Page\Asset;
     </div>
 
     <!-- Меню (для мобилки) -->
-    <div class="mobile-menu-area visible-xs">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="mobile-menu">
-                        <nav id="dropdown">
-                            <ul>
-                                <li>
-                                    <a href="index.html">Главная</a>
-                                </li>
-                                <li>
-                                    <a href="about_us.html">О нас</a>
-                                </li>
-                                <li>
-                                    <a href="services.html">Услуги</a>
-                                    <ul>
-                                        <li>
-                                            <a href="services_landing.html">Лендинг</a>
-                                        </li>
-                                        <li>
-                                            <a href="services_online_shop.html">Интернет-магазин</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="portfolio.html">Портфолио</a>
-                                </li>
-
-                                <li>
-                                    <a href="blog.html">Блог</a>
-                                </li>
-                                <li>
-                                    <a href="contacts.html">Контакты</a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+        <?$APPLICATION->IncludeComponent(
+            "bitrix:menu",
+            "top_menu_pda",
+            [
+                "ALLOW_MULTI_SELECT" => "N",
+                "CHILD_MENU_TYPE" => "subtop",
+                "DELAY" => "N",
+                "MAX_LEVEL" => "2",
+                "MENU_CACHE_GET_VARS" => [],
+                "MENU_CACHE_TIME" => "3600",
+                "MENU_CACHE_TYPE" => "N",
+                "MENU_CACHE_USE_GROUPS" => "N",
+                "ROOT_MENU_TYPE" => "top",
+                "USE_EXT" => "N",
+                "COMPONENT_TEMPLATE" => "top_menu"
+            ],
+            false
+        );?>
 </header>
 
 <!-- Хлебные крошки (навигация) -->

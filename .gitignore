@@ -1,0 +1,10 @@
+#папки и файлы
+/bitrix
+/upload
+.section.php
+storage.php
+test.php
+
+#системные, ide
+.DS_Store
+.idea/
