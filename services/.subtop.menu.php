@@ -2,14 +2,14 @@
 $aMenuLinks = [
     [
         "Лендинг",
-        "/services/",
+        "/services/lending/",
         [],
         [],
         ""
     ],
     [
         "Интернет магазин",
-        "/services/",
+        "/services/internet-magazin/",
         [],
         [],
         ""

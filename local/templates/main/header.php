@@ -241,24 +241,24 @@ use Bitrix\Main\Page\Asset;
     </div>
 
     <!-- Меню (для мобилки) -->
-        <?$APPLICATION->IncludeComponent(
-            "bitrix:menu",
-            "top_menu_pda",
-            [
-                "ALLOW_MULTI_SELECT" => "N",
-                "CHILD_MENU_TYPE" => "subtop",
-                "DELAY" => "N",
-                "MAX_LEVEL" => "2",
-                "MENU_CACHE_GET_VARS" => [],
-                "MENU_CACHE_TIME" => "3600",
-                "MENU_CACHE_TYPE" => "N",
-                "MENU_CACHE_USE_GROUPS" => "N",
-                "ROOT_MENU_TYPE" => "top",
-                "USE_EXT" => "N",
-                "COMPONENT_TEMPLATE" => "top_menu"
-            ],
-            false
-        );?>
+    <?$APPLICATION->IncludeComponent(
+        "bitrix:menu",
+        "top_menu_pda",
+        [
+            "ALLOW_MULTI_SELECT" => "N",
+            "CHILD_MENU_TYPE" => "subtop",
+            "DELAY" => "N",
+            "MAX_LEVEL" => "2",
+            "MENU_CACHE_GET_VARS" => [],
+            "MENU_CACHE_TIME" => "3600",
+            "MENU_CACHE_TYPE" => "N",
+            "MENU_CACHE_USE_GROUPS" => "N",
+            "ROOT_MENU_TYPE" => "top",
+            "USE_EXT" => "N",
+            "COMPONENT_TEMPLATE" => "top_menu"
+        ],
+        false
+    );?>
 </header>
 
 <!-- Хлебные крошки (навигация) -->
@@ -271,18 +271,17 @@ use Bitrix\Main\Page\Asset;
                     <h2 class="white-text"><?$APPLICATION->ShowTitle(false);?></h2>
                 </div>
             </div>
-            <div class="col-md-5 col-sm-6">
-                <div class="breadcrumb-menu">
-                    <ol class="breadcrumb text-right">
-                        <li>
-                            <a href="index.html">Главная</a>
-                        </li>
-                        <li class="active">
-                            <a href="#">Портфолио</a>
-                        </li>
-                    </ol>
-                </div>
-            </div>
+            <?$APPLICATION->IncludeComponent(
+                "bitrix:breadcrumb",
+                "top_navigate",
+                array(
+                    "COMPONENT_TEMPLATE" => "top_navigate",
+                    "START_FROM" => "0",
+                    "PATH" => "",
+                    "SITE_ID" => "s1"
+                ),
+                false
+            );?>
         </div>
     </div>
 </div>

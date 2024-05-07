@@ -4,6 +4,7 @@ $APPLICATION->SetTitle('Наши работы');
 $APPLICATION->SetPageProperty('TITLE', 'Портфолио | Wecoders');
 $APPLICATION->SetPageProperty("keywords", "портфолио, работы, примеры работ, работы");
 $APPLICATION->SetPageProperty("description", "Работы компании");
+$APPLICATION->AddChainItem('Портфолио', $APPLICATION->GetCurDir());
 ?>
 
 <!--Блок с портфолио-->
@@ -11,7 +12,7 @@ $APPLICATION->SetPageProperty("description", "Работы компании");
 	"bitrix:news", 
 	"portfolio", 
 	array(
-		"ADD_ELEMENT_CHAIN" => "N",
+		"ADD_ELEMENT_CHAIN" => "Y",
 		"ADD_SECTIONS_CHAIN" => "N",
 		"AJAX_MODE" => "N",
 		"AJAX_OPTION_ADDITIONAL" => "",
@@ -51,7 +52,7 @@ $APPLICATION->SetPageProperty("description", "Работы компании");
 		"DISPLAY_PREVIEW_TEXT" => "N",
 		"DISPLAY_TOP_PAGER" => "N",
 		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
-		"IBLOCK_ID" => "6",
+		"IBLOCK_ID" => getIdBlocksByCode('portfolio'),
 		"IBLOCK_TYPE" => "content",
 		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
 		"LIST_ACTIVE_DATE_FORMAT" => "d.m.Y",

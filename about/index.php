@@ -4,6 +4,7 @@ $APPLICATION->SetTitle('О студии');
 $APPLICATION->SetPageProperty('TITLE', 'О нас | Wecoders');
 $APPLICATION->SetPageProperty("keywords", "о компании, о нас, команда, контакты");
 $APPLICATION->SetPageProperty("description", "О нашей компании");
+$APPLICATION->AddChainItem('О нас', $APPLICATION->GetCurDir());
 ?>
 
 <!--О нас-->

@@ -4,6 +4,7 @@ $APPLICATION->SetTitle('Контакты');
 $APPLICATION->SetPageProperty('TITLE', 'Контакты | Wecoders');
 $APPLICATION->SetPageProperty("keywords", "контакты, связаться, где находяться, телефон, емаил");
 $APPLICATION->SetPageProperty("description", "Контакты компании");
+$APPLICATION->AddChainItem($APPLICATION->GetTitle() , $APPLICATION->GetCurDir());
 ?>
 
 <!-- Контакты + ФОС -->
@@ -75,7 +76,7 @@ $APPLICATION->SetPageProperty("description", "Контакты компании"
                                 <i class="fa fa-envelope brand-color"></i>
                                 <div class="mail">
                                     <p>
-                                        <a href="/contacts/">
+                                        <a href="#">
                                             <?$APPLICATION->IncludeComponent(
                                                 "bitrix:main.include",
                                                 "",
@@ -208,6 +209,5 @@ $APPLICATION->SetPageProperty("description", "Контакты компании"
         });
     }
 </script>
-<script src="<?= SITE_TEMPLATE_PATH ?>/assets/js/main.js"></script>
 
 <? require($_SERVER['DOCUMENT_ROOT'].'/bitrix/footer.php');?>

@@ -4,6 +4,7 @@ $APPLICATION->SetTitle('Чем мы занимаемся');
 $APPLICATION->SetPageProperty('TITLE', 'Услуги | Wecoders');
 $APPLICATION->SetPageProperty("keywords", "услуги, цена работ, заказать разработку");
 $APPLICATION->SetPageProperty("description", "Услуги предоставляемые компанией");
+$APPLICATION->AddChainItem('Услуги', $APPLICATION->GetCurDir());
 ?>
 
 <!--Услуги-->
