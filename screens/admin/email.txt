@@ -1,0 +1,26 @@
+To: mail@mail.ru
+Subject: 
+X-PHP-Originating-Script: 0:tools.php
+From: admin@mail.ru
+Reply-To: admin@mail.ru
+X-EVENT_NAME: FEEDBACK_FORM
+X-Priority: 3 (Normal)
+Date:
+MIME-Version: 1.0
+X-MID: 11.7
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Информационное сообщение сайта wecoders
+------------------------------------------
+
+Вам было отправлено сообщение через форму обратной связи
+
+Автор: test1
+E-mail автора: test2@mail.ru
+Телефон: test3
+
+Текст сообщения:
+test4
+
+Сообщение сгенерировано автоматически.
